@@ -1,0 +1,14 @@
+﻿@using Revuo.Home.Abstractions
+
+<span class="border border-primary">@DisplayText()</span>
+
+@code {
+    [Parameter]
+    public IRequest Data { get; set; }
+
+    public string DisplayText()
+    {
+        return Data?.Data<string>(2);
+    }
+}
+
