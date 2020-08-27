@@ -2,6 +2,8 @@ name: Build and publish Watch
 on:
   push:
     branches: [ master ]
+    tags:
+    - 'v*'
   pull_request:
     branches: [ master ]
 
