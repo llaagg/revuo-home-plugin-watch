@@ -27,7 +27,7 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DRAFT_RELEASE: "false"
         PRE_RELEASE: "false"
-        CHANGELOG_FILE: "home/CHANGELOG.md"
+        CHANGELOG_FILE: "Watch/CHANGELOG.md"
         ALLOW_EMPTY_CHANGELOG: "false"
         ALLOW_TAG_PREFIX: "true"
       with:
