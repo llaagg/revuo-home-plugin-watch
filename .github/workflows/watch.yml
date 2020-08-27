@@ -29,7 +29,7 @@ jobs:
 
     # trigger if commit contains tag
     - name: Release to github
-      if: starts(steps.tag_name.outputs.CI_COMMIT_TAG, 'v') 
+      if: startsWith(steps.tag_name.outputs.CI_COMMIT_TAG, 'v') 
       uses: docker://antonyurchenko/git-release:latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
