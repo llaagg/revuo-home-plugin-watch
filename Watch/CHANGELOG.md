@@ -1,4 +1,8 @@
 # Watch changelog
+## [1.0.8] - 2020-08-27
+### Changed
+- Github relase setup
+
 ## [1.0.7] - 2020-08-27
 ### Added
 - Publish artefact in build
