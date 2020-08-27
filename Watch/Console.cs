@@ -13,7 +13,7 @@ namespace Watch
 
         public async Task<IResult> Do(IContext context)
         {
-            System.IO.Console.WriteLine( DateTime.Now.ToString());
+            System.Console.WriteLine( DateTime.Now.ToString());
             return new Result();
         }
     }
