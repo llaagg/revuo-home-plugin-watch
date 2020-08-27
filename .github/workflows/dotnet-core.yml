@@ -28,8 +28,8 @@ jobs:
         DRAFT_RELEASE: "false"
         PRE_RELEASE: "false"
         CHANGELOG_FILE: "Watch/CHANGELOG.md"
-        ALLOW_EMPTY_CHANGELOG: "false"
-        ALLOW_TAG_PREFIX: "true"
+#        ALLOW_EMPTY_CHANGELOG: "false"
+#        ALLOW_TAG_PREFIX: "true"
       with:
         args: |
             build/*.dll
