@@ -20,9 +20,9 @@ jobs:
         dotnet-version: 3.1.301
     - name: Install dependencies
       run: dotnet restore Watch
-    - name: Pack
+    - name: Publish
       run: dotnet publish --configuration Release --no-restore Watch -o build
-    - name: Release
+    - name: Release to github
       uses: docker://antonyurchenko/git-release:latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
