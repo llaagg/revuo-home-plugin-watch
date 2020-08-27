@@ -18,9 +18,9 @@ jobs:
       with:
         dotnet-version: 3.1.301
     - name: Install dependencies
-      run: dotnet restore
+      run: dotnet restore Watch
     - name: Pack
-      run: dotnet pack --configuration Release --no-restore
+      run: dotnet pack --configuration Release --no-restore Watch
     
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
