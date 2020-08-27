@@ -22,7 +22,6 @@ jobs:
       run: dotnet restore Watch
     - name: Pack
       run: dotnet publish --configuration Release --no-restore Watch -o build
-
     - name: Release
       uses: docker://antonyurchenko/git-release:latest
       env:
@@ -35,6 +34,3 @@ jobs:
       with:
         args: |
             build/Watch.dll
-            
-    #- name: Test
-    #  run: dotnet test --no-restore --verbosity normal
