@@ -1,4 +1,7 @@
 # Watch changelog
+## [1.0.7] - 2020-08-27
+### Added
+- Publish artefact in build
 
 ## [1.0.6] - 2020-08-27
 ### Added
