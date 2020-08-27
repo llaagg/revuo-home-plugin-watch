@@ -2,8 +2,8 @@ name: Build and publish Watch
 on:
   push:
     branches: [ master ]
-    tags:
-      - 'v*'
+#    tags:
+#      - 'v*'
   pull_request:
     branches: [ master ]
 
@@ -30,8 +30,8 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         DRAFT_RELEASE: "false"
         PRE_RELEASE: "false"
-        CHANGELOG_FILE: "Watch/CHANGELOG.md"
-        ALLOW_EMPTY_CHANGELOG: "false"
+        #CHANGELOG_FILE: "Watch/CHANGELOG.md"
+        ALLOW_EMPTY_CHANGELOG: "true"
         ALLOW_TAG_PREFIX: "true"
       with:
         args: |
