@@ -1,5 +1,4 @@
-name: .NET Core
-
+name: Build and publish Watch
 on:
   push:
     branches: [ master ]
@@ -20,7 +19,20 @@ jobs:
     - name: Install dependencies
       run: dotnet restore Watch
     - name: Pack
-      run: dotnet pack --configuration Release --no-restore Watch
-    
+      run: dotnet publish --configuration Release --no-restore Watch -o build
+
+    - name: Release
+      uses: docker://antonyurchenko/git-release:latest
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        DRAFT_RELEASE: "false"
+        PRE_RELEASE: "false"
+        CHANGELOG_FILE: "CHANGELOG.md"
+        ALLOW_EMPTY_CHANGELOG: "false"
+        ALLOW_TAG_PREFIX: "true"
+      with:
+        args: |
+            build/*.dll
+            
     #- name: Test
     #  run: dotnet test --no-restore --verbosity normal
