@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Revuo.Home.Abstractions;
 
 namespace Watch
 {
-    public class Digital : ILogic
+    public class Digital : ILogic, IInfo
     {
         private int _counter = 0;
         private string WindowId = null;
@@ -37,6 +38,13 @@ namespace Watch
             }
 
             return new Result();
+        }
+
+        public List<KeyValuePair<string, string>> GetInfo()
+        {
+            return new List<KeyValuePair<string, string>>(){
+                new KeyValuePair<string, string>(MetaData.StartAble, "true")
+            };
         }
     }
 }
