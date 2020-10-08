@@ -1,8 +1,6 @@
 name: Build and publish Watch
 on:
   push:
-    branches: 
-      - master
     tags:
       - 'v*'
 
@@ -27,9 +25,8 @@ jobs:
         name: watch-artifact
         path: build/Watch.dll
 
-    # trigger if commit contains tag
     - name: Release to github
-      if: startsWith(steps.tag_name.outputs.CI_COMMIT_TAG, 'v') 
+#      if: startsWith(steps.tag_name.outputs.CI_COMMIT_TAG, 'v') 
       uses: docker://antonyurchenko/git-release:latest
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
