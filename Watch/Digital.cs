@@ -21,7 +21,7 @@ namespace Watch
                     _counter++;
 
                     var result =
-                        context.Run("Revuo.Home.Components.Box",
+                        context.Run("Revuo.Home.Components.UI.Box",
                             new Request(
                                 WindowId, 
                                 "Timer",
