@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading;
 using System.Threading.Tasks;
 using Revuo.Home.Abstractions;
 
 namespace Watch
 {
-    public class Analogue : ILogic
+    public class Analogue : ILogic, IInfo
     {
         private int _counter = 0;
         private string WindowId = null;
@@ -20,16 +21,20 @@ namespace Watch
                     _counter++;
 
                     var result =
-                        context.Run("Revuo.Home.Components.UserControl",
+                        context.Run("Revuo.Home.Components.UI.Control",
                             new Request(
                                 WindowId, 
-                                typeof(AnalogueWatch).AssemblyQualifiedName,
+                                new
+                                {
+                                    Title = "Analog watch",
+                                    TypeName =typeof(AnalogueWatch).AssemblyQualifiedName
+
+                                },
                                 DateTime.Now.ToString()
                                 ))
                             .Result;
 
-                    if (result.Success &&
-                        WindowId == null)
+                    if (result.Success)
                     {
                         WindowId = result.Data<string>(0);
                     }
@@ -38,5 +43,13 @@ namespace Watch
 
             return new Result();
         }
+
+        public List<KeyValuePair<string, string>> GetInfo()
+        {
+            return new List<KeyValuePair<string, string>>(){
+                new KeyValuePair<string, string>(MetaData.StartAble, MetaData.StartAble_True)
+            };
+        }
+
     }
 }

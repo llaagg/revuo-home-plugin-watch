@@ -6,6 +6,9 @@
     [Parameter]
     public IRequest Data { get; set; }
 
+    [Parameter]
+    public string Id { get; set; }
+
     public string DisplayText()
     {
         return Data?.Data<string>(2);

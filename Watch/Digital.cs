@@ -29,8 +29,7 @@ namespace Watch
                                 ))
                             .Result;
 
-                    if (result.Success &&
-                        WindowId == null)
+                    if (result.Success )
                     {
                         WindowId = result.Data<string>(0);
                     }

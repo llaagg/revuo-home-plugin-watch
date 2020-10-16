@@ -17,7 +17,7 @@ namespace Watch
         public List<KeyValuePair<string, string>> GetInfo()
         {
             return new List<KeyValuePair<string, string>>(){
-                new KeyValuePair<string, string>(MetaData.StartAble, "true")
+                new KeyValuePair<string, string>(MetaData.StartAble, MetaData.StartAble_True)
             };
         }
     }
