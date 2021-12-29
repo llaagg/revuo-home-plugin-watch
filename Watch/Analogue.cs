@@ -28,7 +28,6 @@ namespace Watch
                                 {
                                     Title = "Analog watch",
                                     TypeName =typeof(AnalogueWatch).AssemblyQualifiedName
-
                                 },
                                 DateTime.Now.ToString()
                                 ))
